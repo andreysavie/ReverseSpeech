@@ -7,17 +7,13 @@
 
 import UIKit
 
-var tracks: [String] = ["Apples", "Plum"]
-
-
-
 class MusicViewController: UIViewController {
     
     let playerView = PlayerView()
     
     private lazy var tableView: UITableView = {
         let table = UITableView(frame: .zero, style: .insetGrouped )
-        table.translatesAutoresizingMaskIntoConstraints = false
+        table.toAutoLayout()
         table.separatorInset = .zero
         table.rowHeight = UITableView.automaticDimension
         return table
@@ -26,6 +22,8 @@ class MusicViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        playerView.toAutoLayout()
         
         view.backgroundColor = .white
         
@@ -39,6 +37,9 @@ class MusicViewController: UIViewController {
         )
 
         view.addSubviews(tableView, playerView)
+        
+
+        
         setupLayout()
     }
 
@@ -70,7 +71,7 @@ extension MusicViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tracks.count
+        return Model.tracks.count
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {

@@ -13,24 +13,26 @@ class PlayerView: UIView {
     
     // MARK: PROPERTIES =============================================================================================
     
+    
     private var player = AVAudioPlayer()
     private var counter = 0
     
     private var currentTrackName: String {
         get {
-            return tracks[counter]
+            let singer = Model.tracks[counter]
+            let track = Model.tracks[counter]
+            return "\(singer) - \(track)"
         }
     }
     
     private lazy var playPauseButton = getButton(icon: "play.fill", action: #selector(playPauseButtonAction))
     private lazy var stopButton = getButton(icon: "stop.fill", action: #selector(stopButtonAction))
-    private lazy var nextTrackButton = getButton(icon: "forward.end.fill", action: #selector(nextTrackAction))
-    private lazy var previousTrackButton = getButton(icon: "backward.end.fill", action: #selector(prevTrackAction))
-    
+    private lazy var nextTrackButton = getButton(icon: "forward.fill", action: #selector(nextTrackAction))
+    private lazy var previousTrackButton = getButton(icon: "backward.fill", action: #selector(prevTrackAction))
     
     private lazy var trackNameLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
+        label.toAutoLayout()
         label.text = ""
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
@@ -39,13 +41,8 @@ class PlayerView: UIView {
     }()
     
     private lazy var playerButtonsStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [
-            previousTrackButton,
-            playPauseButton,
-            stopButton,
-            nextTrackButton]
-        )
-        stackView.translatesAutoresizingMaskIntoConstraints = false
+        let stackView = UIStackView(arrangedSubviews: [previousTrackButton, playPauseButton, stopButton, nextTrackButton])
+        stackView.toAutoLayout()
         stackView.axis = .horizontal
         stackView.spacing = 24
         stackView.alignment = .center
@@ -59,7 +56,6 @@ class PlayerView: UIView {
     
     init () {
         super.init(frame: .zero)
-        translatesAutoresizingMaskIntoConstraints = false
         addSubviews(playerButtonsStackView, trackNameLabel)
         setuplayout()
         setTrack()
@@ -72,7 +68,7 @@ class PlayerView: UIView {
     // MARK: METHODS =================================================================================================
     
     private func setTrack() {
-        let trackName = tracks[counter]
+        let trackName = Model.tracks[counter]
         
         guard let trackURL = Bundle.main.url(forResource: trackName, withExtension: "mp3") else { return }
         
@@ -93,17 +89,13 @@ class PlayerView: UIView {
         playPauseButton.setCustomImage(name: "pause.fill", size: 32)
     }
     
-    func trackChanged() {
-        trackNameLabel.text = "\(currentTrackName)"
-        setTrack()
-        player.play()
-    }
-    
     private func setuplayout() {
+
         NSLayoutConstraint.activate([
-            playerButtonsStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 32),
-            playerButtonsStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -32),
-            playerButtonsStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -32),
+            
+            playerButtonsStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            playerButtonsStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            playerButtonsStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16),
             
             trackNameLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 32),
             trackNameLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -32),
@@ -111,19 +103,32 @@ class PlayerView: UIView {
         ])
     }
     
-    // MARK: OBJC METHODS =================================================================================================
     
+    // MARK: OBJC METHODS =================================================================================================
+
     @objc
     private func nextTrackAction () {
-        counter = counter == tracks.count - 1 ? 0 : 1
-        trackChanged()
+        if counter == Model.tracks.count - 1 {
+            counter = 0
+        } else {
+            counter += 1
+        }
+        trackNameLabel.text = "\(currentTrackName)"
+        setTrack()
+        player.play()
     }
     
     
     @objc
     private func prevTrackAction () {
-        counter = counter == 0 ? tracks.count - 1 : counter - 1
-        trackChanged()
+        if counter == 0 {
+            counter = Model.tracks.count - 1
+        } else {
+            counter -= 1
+        }
+        trackNameLabel.text = "\(currentTrackName)"
+        setTrack()
+        player.play()
     }
     
     @objc
@@ -146,28 +151,30 @@ class PlayerView: UIView {
         player.currentTime = 0
         playPauseButton.setCustomImage(name: "play.fill", size: 32)
     }
-}
 
-public extension UIButton {
-    
-    func setCustomImage(name: String, size: CGFloat) {
-        setImage((UIImage(systemName: name, withConfiguration: UIImage.SymbolConfiguration(pointSize: size))?.withTintColor(.black, renderingMode: .alwaysOriginal))!, for: .normal)
-    }
 }
 
 public extension UIView {
+    
+    func toAutoLayout() {
+        translatesAutoresizingMaskIntoConstraints = false
+    }
     
     func addSubviews(_ subviews: UIView...) {
           subviews.forEach { addSubview($0) }
       }
     
-    func getButton(icon name: String, action: Selector ) -> UIButton {
+    func getButton (icon name: String, action: Selector ) -> UIButton {
         let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
         button.setCustomImage(name: name, size: 32)
         button.addTarget(self, action: action, for: .touchUpInside)
         return button
     }
-
 }
 
+public extension UIButton {
+    
+    func setCustomImage (name: String, size: CGFloat) {
+        setImage((UIImage(systemName: name, withConfiguration: UIImage.SymbolConfiguration(pointSize: size))?.withTintColor(.black, renderingMode: .alwaysOriginal))!, for: .normal)
+    }
+}

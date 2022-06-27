@@ -13,13 +13,13 @@ class TrackTableViewCell: UITableViewCell {
     
     private lazy var trackNameLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
+        label.toAutoLayout()
         return label
     }()
     
     private lazy var musicIcon: UIImageView = {
         let image = UIImageView()
-        image.translatesAutoresizingMaskIntoConstraints = false
+        image.toAutoLayout()
         image.image = UIImage(systemName: "music.note", withConfiguration: UIImage.SymbolConfiguration(pointSize: 32))?.withTintColor(.black, renderingMode: .alwaysOriginal)
         return image
     }()
@@ -53,7 +53,7 @@ class TrackTableViewCell: UITableViewCell {
     }
     
     func setConfigureOfCell(index: Int) {
-        trackNameLabel.text = tracks[index]
+        trackNameLabel.text = Model.tracks[index]
     }
 }
 

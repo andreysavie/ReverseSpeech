@@ -15,6 +15,7 @@
 		D523672D2860B7190037C8D8 /* Plum.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D523672B2860B7190037C8D8 /* Plum.mp3 */; };
 		D52367302860B75C0037C8D8 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D523672F2860B75C0037C8D8 /* PlayerView.swift */; };
 		D52367322860BBDD0037C8D8 /* TrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52367312860BBDD0037C8D8 /* TrackTableViewCell.swift */; };
+		D52E46FE286A327F0069BBE6 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52E46FD286A327F0069BBE6 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		D523672B2860B7190037C8D8 /* Plum.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Plum.mp3; sourceTree = "<group>"; };
 		D523672F2860B75C0037C8D8 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		D52367312860BBDD0037C8D8 /* TrackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackTableViewCell.swift; sourceTree = "<group>"; };
+		D52E46FD286A327F0069BBE6 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				D5039CC4285FA7B00053C6DE /* MusicViewController.swift */,
 				D52367312860BBDD0037C8D8 /* TrackTableViewCell.swift */,
 				D523672F2860B75C0037C8D8 /* PlayerView.swift */,
+				D52E46FD286A327F0069BBE6 /* Model.swift */,
 				D523672E2860B7260037C8D8 /* Tracks */,
 				D5039CC9285FA7B50053C6DE /* Assets.xcassets */,
 				D5039CCB285FA7B50053C6DE /* LaunchScreen.storyboard */,
@@ -156,6 +159,7 @@
 				D52367302860B75C0037C8D8 /* PlayerView.swift in Sources */,
 				D5039CC5285FA7B00053C6DE /* MusicViewController.swift in Sources */,
 				D5039CC1285FA7B00053C6DE /* AppDelegate.swift in Sources */,
+				D52E46FE286A327F0069BBE6 /* Model.swift in Sources */,
 				D52367322860BBDD0037C8D8 /* TrackTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
