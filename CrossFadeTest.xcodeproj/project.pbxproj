@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE6E7781F4422582A9444C34 /* Pods_CrossFadeTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1699FFA147266D54F0613C78 /* Pods_CrossFadeTest.framework */; };
 		D5039CC1285FA7B00053C6DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5039CC0285FA7B00053C6DE /* AppDelegate.swift */; };
 		D5039CC5285FA7B00053C6DE /* MusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5039CC4285FA7B00053C6DE /* MusicViewController.swift */; };
 		D5039CCA285FA7B50053C6DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5039CC9285FA7B50053C6DE /* Assets.xcassets */; };
@@ -16,9 +17,16 @@
 		D52367302860B75C0037C8D8 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D523672F2860B75C0037C8D8 /* PlayerView.swift */; };
 		D52367322860BBDD0037C8D8 /* TrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52367312860BBDD0037C8D8 /* TrackTableViewCell.swift */; };
 		D52E46FE286A327F0069BBE6 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52E46FD286A327F0069BBE6 /* Model.swift */; };
+		D52E4700286A40F10069BBE6 /* RecordingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52E46FF286A40F10069BBE6 /* RecordingView.swift */; };
+		D54B6DA1286CD60400D861C6 /* AudioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54B6DA0286CD60400D861C6 /* AudioButton.swift */; };
+		D54B6DA4286CDBC900D861C6 /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54B6DA3286CDBC900D861C6 /* MainButton.swift */; };
+		D54B6DA7286CE57600D861C6 /* RecordingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54B6DA6286CE57600D861C6 /* RecordingModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1699FFA147266D54F0613C78 /* Pods_CrossFadeTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CrossFadeTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CB8D7FA814D15ACC6B2358D /* Pods-CrossFadeTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrossFadeTest.debug.xcconfig"; path = "Target Support Files/Pods-CrossFadeTest/Pods-CrossFadeTest.debug.xcconfig"; sourceTree = "<group>"; };
+		52C85AF60949224AF7443FEF /* Pods-CrossFadeTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrossFadeTest.release.xcconfig"; path = "Target Support Files/Pods-CrossFadeTest/Pods-CrossFadeTest.release.xcconfig"; sourceTree = "<group>"; };
 		D5039CBD285FA7B00053C6DE /* CrossFadeTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrossFadeTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5039CC0285FA7B00053C6DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5039CC4285FA7B00053C6DE /* MusicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicViewController.swift; sourceTree = "<group>"; };
@@ -30,6 +38,10 @@
 		D523672F2860B75C0037C8D8 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		D52367312860BBDD0037C8D8 /* TrackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackTableViewCell.swift; sourceTree = "<group>"; };
 		D52E46FD286A327F0069BBE6 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		D52E46FF286A40F10069BBE6 /* RecordingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingView.swift; sourceTree = "<group>"; };
+		D54B6DA0286CD60400D861C6 /* AudioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioButton.swift; sourceTree = "<group>"; };
+		D54B6DA3286CDBC900D861C6 /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
+		D54B6DA6286CE57600D861C6 /* RecordingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,17 +49,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE6E7781F4422582A9444C34 /* Pods_CrossFadeTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		97DEE4D9E4CF582D5071D481 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3CB8D7FA814D15ACC6B2358D /* Pods-CrossFadeTest.debug.xcconfig */,
+				52C85AF60949224AF7443FEF /* Pods-CrossFadeTest.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C453D3C755CE0740A7995564 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1699FFA147266D54F0613C78 /* Pods_CrossFadeTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D5039CB4285FA7B00053C6DE = {
 			isa = PBXGroup;
 			children = (
 				D5039CBF285FA7B00053C6DE /* CrossFadeTest */,
 				D5039CBE285FA7B00053C6DE /* Products */,
+				97DEE4D9E4CF582D5071D481 /* Pods */,
+				C453D3C755CE0740A7995564 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,6 +98,8 @@
 				D5039CC4285FA7B00053C6DE /* MusicViewController.swift */,
 				D52367312860BBDD0037C8D8 /* TrackTableViewCell.swift */,
 				D523672F2860B75C0037C8D8 /* PlayerView.swift */,
+				D54B6DA2286CDB8500D861C6 /* Buttons */,
+				D54B6DA5286CE55500D861C6 /* Recorder */,
 				D52E46FD286A327F0069BBE6 /* Model.swift */,
 				D523672E2860B7260037C8D8 /* Tracks */,
 				D5039CC9285FA7B50053C6DE /* Assets.xcassets */,
@@ -84,6 +118,24 @@
 			path = Tracks;
 			sourceTree = "<group>";
 		};
+		D54B6DA2286CDB8500D861C6 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				D54B6DA0286CD60400D861C6 /* AudioButton.swift */,
+				D54B6DA3286CDBC900D861C6 /* MainButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		D54B6DA5286CE55500D861C6 /* Recorder */ = {
+			isa = PBXGroup;
+			children = (
+				D52E46FF286A40F10069BBE6 /* RecordingView.swift */,
+				D54B6DA6286CE57600D861C6 /* RecordingModel.swift */,
+			);
+			path = Recorder;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -91,9 +143,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D5039CD1285FA7B50053C6DE /* Build configuration list for PBXNativeTarget "CrossFadeTest" */;
 			buildPhases = (
+				3F9D178A027CA3DA5BA8F93A /* [CP] Check Pods Manifest.lock */,
 				D5039CB9285FA7B00053C6DE /* Sources */,
 				D5039CBA285FA7B00053C6DE /* Frameworks */,
 				D5039CBB285FA7B00053C6DE /* Resources */,
+				63F867FF9130AEE062DD3164 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -151,6 +205,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3F9D178A027CA3DA5BA8F93A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CrossFadeTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		63F867FF9130AEE062DD3164 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CrossFadeTest/Pods-CrossFadeTest-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CrossFadeTest/Pods-CrossFadeTest-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CrossFadeTest/Pods-CrossFadeTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D5039CB9285FA7B00053C6DE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -158,9 +254,13 @@
 			files = (
 				D52367302860B75C0037C8D8 /* PlayerView.swift in Sources */,
 				D5039CC5285FA7B00053C6DE /* MusicViewController.swift in Sources */,
+				D54B6DA7286CE57600D861C6 /* RecordingModel.swift in Sources */,
+				D52E4700286A40F10069BBE6 /* RecordingView.swift in Sources */,
 				D5039CC1285FA7B00053C6DE /* AppDelegate.swift in Sources */,
+				D54B6DA4286CDBC900D861C6 /* MainButton.swift in Sources */,
 				D52E46FE286A327F0069BBE6 /* Model.swift in Sources */,
 				D52367322860BBDD0037C8D8 /* TrackTableViewCell.swift in Sources */,
+				D54B6DA1286CD60400D861C6 /* AudioButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +394,7 @@
 		};
 		D5039CD2285FA7B50053C6DE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3CB8D7FA814D15ACC6B2358D /* Pods-CrossFadeTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -322,6 +423,7 @@
 		};
 		D5039CD3285FA7B50053C6DE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52C85AF60949224AF7443FEF /* Pods-CrossFadeTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

@@ -9,7 +9,10 @@ import UIKit
 
 class MusicViewController: UIViewController {
     
+    // MARK: PROPERTIES =============================================================================================
+    
     let playerView = PlayerView()
+    let recorderView = RecordingView()
     
     private lazy var tableView: UITableView = {
         let table = UITableView(frame: .zero, style: .insetGrouped )
@@ -19,11 +22,13 @@ class MusicViewController: UIViewController {
         return table
     }()
     
-    
+    // MARK: INITS =============================================================================================
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         playerView.toAutoLayout()
+        recorderView.toAutoLayout()
         
         view.backgroundColor = .white
         
@@ -36,12 +41,14 @@ class MusicViewController: UIViewController {
                 describing: TrackTableViewCell.self)
         )
 
-        view.addSubviews(tableView, playerView)
+        view.addSubviews(tableView, playerView, recorderView)
         
 
         
         setupLayout()
     }
+
+    // MARK: METHODS =============================================================================================
 
     private func setupLayout() {
         
@@ -51,16 +58,24 @@ class MusicViewController: UIViewController {
             playerView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
             playerView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: 20),
             playerView.heightAnchor.constraint(equalToConstant: 160),
+            
+            recorderView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            recorderView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            recorderView.bottomAnchor.constraint(equalTo: playerView.topAnchor, constant: -20),
+            recorderView.heightAnchor.constraint(equalToConstant: 80),
 
             tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             tableView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
             tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: playerView.topAnchor)
+            tableView.bottomAnchor.constraint(equalTo: recorderView.topAnchor)
 
         ])
     }
     
 }
+
+// MARK: EXTENSIONS =============================================================================================
+
 
 extension MusicViewController: UITableViewDataSource {
 
